@@ -3,15 +3,14 @@
 
 require_once '../vendor/autoload.php'; // Certifique-se de que o autoload do Composer está incluído
 
-function conectarMongoDB() {
-    $host = $_ENV['DB_HOST'] ?? '127.0.0.1'; // Valor padrão
-    $port = $_ENV['DB_PORT'] ?? '27017'; // Valor padrão
-    $dbName = $_ENV['DB_NAME'] ?? 'testDB'; // Valor padrão
+function conectarSQLite() {
+    $dbPath = $_ENV['DB_NAME'] ?? 'database.sqlite'; // Valor padrão
 
     try {
-        $client = new MongoDB\Client("mongodb://$host:$port");
-        return $client->$dbName; // Retorna a instância do banco de dados
-    } catch (MongoDB\Driver\Exception\Exception $e) {
+        $db = new PDO("sqlite:$dbPath");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $db; // Retorna a instância do banco de dados
+    } catch (PDOException $e) {
         echo "Erro na conexão: " . $e->getMessage();
         exit();
     }
