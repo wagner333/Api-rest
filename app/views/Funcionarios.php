@@ -1,5 +1,5 @@
 <?php
-require_once '/home/wagner/Documentos/miniframe/app/controller/UserController.php';
+require_once '../app/controller/UserController.php';
 
 $funcionarioController = new UserController();
 
