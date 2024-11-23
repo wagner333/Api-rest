@@ -51,3 +51,9 @@ Este é um sistema de gerenciamento de mercado desenvolvido em PHP, destinado a 
 1. Clone este repositório:
    ```bash
    git clone https://github.com/wagner333/Sistema-para-Mercado-.git
+2. faça o login
+Email: admin@gmail.com
+Senha: admin
+![image](https://github.com/user-attachments/assets/3c51e052-e748-4948-a130-8c2bbef475c8)
+OBS: algumas parte não estão completas com o tempo receberam atualizações
+
